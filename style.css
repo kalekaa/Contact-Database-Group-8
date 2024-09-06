@@ -1,1 +1,51 @@
+body 
+{
+    background-color: #7E7F9A;
+}
+/******** section for login page ********/
+#title 
+{
+    display: inline-block;
+    font-size: 40px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 5%;
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
 
+#loginDiv
+{
+    border-radius: 15px;
+    font-size: 30px;
+    width: 70%;
+    padding: 25px;
+    background-color: #97A7B3;
+}
+/* centers box surrounding login section */
+.container 
+{
+    display: flex;
+    align-items: center; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    height: 100vh; /* Full viewport height */
+}
+
+input[type="text"],input[type="password"]{
+    border-radius: 15px;
+    text-align: center;
+    width: 40%;
+    height: 5%;
+    margin: 0 auto 2%;
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: white;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #F3DE8A; /* Change border color when focused */
+    outline: none; /* Remove default focus outline */
+}
+
+/******** end of login page ********/
