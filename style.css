@@ -5,47 +5,185 @@ body
 /******** section for login page ********/
 #title 
 {
+    font-size: 70px;
+    width: 90%;
+    margin: 0 auto 5%; /* Center horizontally, no vertical margins */
+    padding-top: 100px; /* Adjust as needed to move the title down */
+    text-align: center;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+}
+
+#smallerTitle 
+{
     display: inline-block;
-    font-size: 40px;
+    font-size: 45px;
     width: 90%;
     text-align: center;
-    margin: 0 auto 5%;
+    margin: 20px auto 5%;
     display: block;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
 }
 
 #loginDiv
 {
     border-radius: 15px;
-    font-size: 30px;
     width: 70%;
-    padding: 25px;
+    padding: 30px;
     background-color: #97A7B3;
 }
 /* centers box surrounding login section */
 .container 
 {
     display: flex;
-    align-items: center; /* Vertically center the child */
+    align-items: flex-start; /* Vertically center the child */
     justify-content: center; /* Horizontally center the child */
     height: 100vh; /* Full viewport height */
 }
 
-input[type="text"],input[type="password"]{
+input[type="text"],input[type="password"]
+{
     border-radius: 15px;
     text-align: center;
     width: 40%;
-    height: 5%;
-    margin: 0 auto 2%;
+    height: 6%;
+    margin: 0 auto 1%;
     display: block;
-    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
     background-color: white;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-    border-color: #F3DE8A; /* Change border color when focused */
-    outline: none; /* Remove default focus outline */
+/* not being usedd yet*/
+#loginResult
+{
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 2%;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: #95060a;
 }
 
+#buttonStyle
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttons
+{ 
+    width: 20%;
+    height: 4%;
+    margin: 0 auto 2%;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid black;
+
+    text-align: center;
+   
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+
+}
+
+.login:hover
+{
+    background-color: #CAE7B9;
+}
+
+.createAccount:hover
+{
+    background-color: #F3DE8A;
+
+}
 /******** end of login page ********/
+
+/******** creating account ********/
+#directions 
+{
+    display: inline-block;
+    font-size: 30px;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto 5%;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+ 
+    color: white;
+}
+
+/******** options menu ********/
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+    gap: 10px; /* Spacing between buttons */
+    width: 300px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+#menuOptions
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menuButtons
+{ 
+    width: 80%;
+    height: 100%;
+    margin: 0 auto 2%;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid black;
+
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+}
+
+.logout-button {
+    width: 40%;
+    height: 25%;
+    margin: 5% auto 2%;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid black;
+
+    grid-column: 1 / span 2; /* Span both columns */
+    padding: 10px 20px;
+    font-size: 16px;
+
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+}
+
+.search:hover
+{
+    background-color: #CAE7B9;
+}
+
+.edit:hover
+{
+    background-color: #F3DE8A;
+}
+
+.delete:hover
+{
+    background-color: #EB9486;
+}
+
+.add:hover
+{
+    background-color: #7E7F9A;
+}
