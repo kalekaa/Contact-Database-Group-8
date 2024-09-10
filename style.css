@@ -43,6 +43,13 @@ body
     height: 100vh; /* Full viewport height */
 }
 
+.container a
+{
+    display: flex;
+    align-items: center; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+}
+
 input[type="text"],input[type="password"]
 {
     border-radius: 15px;
