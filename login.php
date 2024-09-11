@@ -16,7 +16,7 @@ if( $conn->connect_error )
 else
 {
         $stmt = $conn->prepare("SELECT ID,firstName,lastName,Email FROM Users WHERE Login=? AND Password =?");
-        $stmt->bind_param("ss", $inData["login"], $inData["password"]);
+        $stmt->bind_param("sss", $inData["login"], $inData["password"], $inData["email"]);
         $stmt->execute();
         $result = $stmt->get_result();
 
