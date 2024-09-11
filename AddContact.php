@@ -17,16 +17,23 @@
                 $stmt = $conn->prepare("INSERT into Contacts (UserId, Name, Phone, Email) VALUES (?, ?, ?, ?)");
                
                 // bind to the table contacts () name phone email userId 
-                // "sssi" is 3 string types and one int 
-                $stmt->bind_param("sssi", $name, $phone, $email, $userId);
+                // "isss" is 3 string types and one int 
+                $stmt->bind_param("isss", $userId, $name, $phone, $email);
+                $stmt->execute()
 
-                // execute the statement 
-                $stmt->execute();
+                if ($stmt->execute())
+                {
+                    if ($stmt->affected_rows > 0) 
+                        returnWithInfo($name, $phone, $email);
+                    else
+                        returnWithError("Did not create");
+                
+                    // close the prepared statement 
+                    $stmt->close();
+                }
 
-                // close the prepared statement and connection 
-                $stmt->close();
+                // close the connection 
                 $conn->close();
-                returnWithError("");
         }
 
         function getRequestInfo()
