@@ -1,0 +1,225 @@
+body 
+{
+    background-color: #6E8EB1;
+}
+/******** section for login page ********/
+#title 
+{
+    font-size: 65px;
+    width: 90%;
+    margin: 0 auto 2%; /* Center horizontally, no vertical margins */
+    display: block;
+    padding-top: 40px; /* Adjust as needed to move the title down */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+}
+
+#smallerTitle 
+{
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto 5%;
+    display: block;
+    
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    color: black;
+}
+
+#loginDiv
+{
+    border-radius: 15px;
+    width: 70%;
+    padding: 30px;
+    background-color: #DEEDFF;
+}
+/* centers box surrounding login section */
+.container 
+{
+    display: flex;
+    align-items: flex-start; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    height: 100vh; /* Full viewport height */
+}
+
+.container a
+{
+    display: flex;
+    align-items: center; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    border: 2px solid black;
+
+}
+
+input[type="text"],input[type="password"]
+{
+    border-radius: 15px;
+    text-align: center;
+    width: 40%;
+    height: 6%;
+    margin: 0 auto 1%;
+    display: block;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    background-color: white;
+}
+
+/* not being usedd yet*/
+#loginResult
+{
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 2%;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    color: #95060a;
+}
+
+#buttonStyle
+{
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttons
+{ 
+    width: 20%;
+    height: 4%;
+    margin: 0 auto 2%;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid black;
+
+    text-align: center;
+   
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+
+}
+
+.login:hover
+{
+    background-color: #CAE7B9;
+}
+
+.createAccount:hover
+{
+    background-color: #F8EAAF;
+
+}
+/******** end of login page ********/
+
+/******** creating account ********/
+#directions 
+{
+    display: inline-block;
+    font-size: 30px;
+    width: 90%;
+    text-align: center;
+    margin: 20px auto 5%;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    color: black;
+}
+
+/******** options menu ********/
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+    gap: 50px; /* Spacing between buttons */
+    width: 300px; /* Adjust width as needed */
+    margin: 0 auto;
+}
+
+#menuOptions
+{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menuButtons
+{ 
+    width: 80%;
+    height: 100%;
+    margin: 0 auto 2%;
+    display: block;
+    border-radius: 15px;
+    border: 2px solid black;
+
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+}
+
+.logoutButton {
+    width: 50%;
+    height: 80%;
+    margin: 0 auto 2%;
+    display: block;
+    border-radius: 15px;
+
+    grid-column: 1 / span 2; /* Span both columns */
+    padding: 10px 20px;
+   
+    text-decoration: none; /* Remove underline */
+    background-color: white;
+    color: black;
+}
+
+.search:hover
+{
+    background-color: #EB9486;
+}
+
+.edit:hover
+{
+    background-color: #F8EAAF;
+}
+
+.delete:hover
+{
+    background-color: #CAE7B9;
+}
+
+.add:hover
+{
+    background-color: #FFAF81;
+}
+
+.logout:hover
+{
+    background-color: #6E8EB1;
+}
+
+.popUp {
+    display: none;
+    align-items: flex-start; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    height: 85vh; /* Full viewport height */
+    background-color: #DEEDFF;
+
+    border-radius: 15px;
+    width: 70%;
+    padding: 30px;
+    margin: 0 auto; 
+}
+
+.popUp a{
+    display: flex;
+    align-items: center; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    border: 2px solid black;
+}
