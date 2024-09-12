@@ -1,16 +1,16 @@
 body 
 {
-    background-color: #7E7F9A;
+    background-color: #6E8EB1;
 }
 /******** section for login page ********/
 #title 
 {
-    font-size: 70px;
+    font-size: 65px;
     width: 90%;
-    margin: 0 auto 5%; /* Center horizontally, no vertical margins */
-    padding-top: 100px; /* Adjust as needed to move the title down */
-    text-align: center;
+    margin: 0 auto 2%; /* Center horizontally, no vertical margins */
     display: block;
+    padding-top: 40px; /* Adjust as needed to move the title down */
+    text-align: center;
     font-family: 'Courier New', Courier, monospace;
     color: #FFFFFF;
 }
@@ -18,13 +18,15 @@ body
 #smallerTitle 
 {
     display: inline-block;
-    font-size: 45px;
     width: 90%;
     text-align: center;
     margin: 20px auto 5%;
     display: block;
+    
+    font-size: 45px;
     font-family: 'Courier New', Courier, monospace;
-    color: white;
+    font-weight: normal;
+    color: black;
 }
 
 #loginDiv
@@ -32,7 +34,7 @@ body
     border-radius: 15px;
     width: 70%;
     padding: 30px;
-    background-color: #97A7B3;
+    background-color: #DEEDFF;
 }
 /* centers box surrounding login section */
 .container 
@@ -48,6 +50,8 @@ body
     display: flex;
     align-items: center; /* Vertically center the child */
     justify-content: center; /* Horizontally center the child */
+    border: 2px solid black;
+
 }
 
 input[type="text"],input[type="password"]
@@ -60,6 +64,7 @@ input[type="text"],input[type="password"]
     display: block;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
+    color: black;
     background-color: white;
 }
 
@@ -109,7 +114,7 @@ input[type="text"],input[type="password"]
 
 .createAccount:hover
 {
-    background-color: #F3DE8A;
+    background-color: #F8EAAF;
 
 }
 /******** end of login page ********/
@@ -124,15 +129,16 @@ input[type="text"],input[type="password"]
     margin: 20px auto 5%;
     display: block;
     font-family: 'Courier New', Courier, monospace;
- 
-    color: white;
+    font-weight: normal;
+    color: black;
 }
 
 /******** options menu ********/
+
 .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
-    gap: 10px; /* Spacing between buttons */
+    gap: 50px; /* Spacing between buttons */
     width: 300px; /* Adjust width as needed */
     margin: 0 auto;
 }
@@ -140,7 +146,7 @@ input[type="text"],input[type="password"]
 #menuOptions
 {
     text-align: center;
-    font-size: 15px;
+    font-size: 35px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -158,18 +164,16 @@ input[type="text"],input[type="password"]
     color: black;
 }
 
-.logout-button {
-    width: 40%;
-    height: 25%;
-    margin: 5% auto 2%;
+.logoutButton {
+    width: 50%;
+    height: 80%;
+    margin: 0 auto 2%;
     display: block;
     border-radius: 15px;
-    border: 2px solid black;
 
     grid-column: 1 / span 2; /* Span both columns */
     padding: 10px 20px;
-    font-size: 16px;
-
+   
     text-decoration: none; /* Remove underline */
     background-color: white;
     color: black;
@@ -177,20 +181,45 @@ input[type="text"],input[type="password"]
 
 .search:hover
 {
-    background-color: #CAE7B9;
+    background-color: #EB9486;
 }
 
 .edit:hover
 {
-    background-color: #F3DE8A;
+    background-color: #F8EAAF;
 }
 
 .delete:hover
 {
-    background-color: #EB9486;
+    background-color: #CAE7B9;
 }
 
 .add:hover
 {
-    background-color: #7E7F9A;
+    background-color: #FFAF81;
+}
+
+.logout:hover
+{
+    background-color: #6E8EB1;
+}
+
+.popUp {
+    display: none;
+    align-items: flex-start; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    height: 85vh; /* Full viewport height */
+    background-color: #DEEDFF;
+
+    border-radius: 15px;
+    width: 70%;
+    padding: 30px;
+    margin: 0 auto; 
+}
+
+.popUp a{
+    display: flex;
+    align-items: center; /* Vertically center the child */
+    justify-content: center; /* Horizontally center the child */
+    border: 2px solid black;
 }
