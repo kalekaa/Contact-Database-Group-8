@@ -67,17 +67,28 @@ input[type="text"],input[type="password"]
     color: black;
     background-color: white;
 }
+#loginName
+{
+        font-size: 30px;
+}
+#loginPassword
+{
+        font-size: 30px;
+}
 
 /* not being usedd yet*/
 #loginResult
 {
+    display: inline-block;
     font-size: 0.8em;
     width: 90%;
     text-align: center;
-    margin: 0 auto 2%;
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
     color: #95060a;
+}
+
 }
 
 #buttonStyle
@@ -131,6 +142,35 @@ input[type="text"],input[type="password"]
     font-family: 'Courier New', Courier, monospace;
     font-weight: normal;
     color: black;
+}
+#firstName {
+    font-size: 30px;
+}
+
+#lastName {
+    font-size: 30px;
+}
+
+#login {
+    font-size: 30px;
+}
+
+#password {
+    font-size: 30px;
+}
+
+#userAddResult {
+
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+    
 }
 
 /******** options menu ********/
