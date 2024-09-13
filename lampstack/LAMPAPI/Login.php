@@ -14,18 +14,16 @@ if( $conn->connect_error )
 }
 else
 {
-    $stmt = $conn->prepare("SELECT ID, firstName, lastName, Email FROM Users WHERE Login=? AND Password =?");
+    $stmt = $conn->prepare("SELECT ID, firstName, lastName FROM Users WHERE Login=? AND Password =?");
     $stmt->bind_param("ss", $inData["login"], $inData["password"]);
+    $stmt->execute();
+	$result = $stmt->get_result();
 
-    if ($stmt->execute())
-    {
-        $result = $stmt->get_result();
-        if( $row = $result->fetch_assoc())
-            returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] ); // ?
-        else
-            returnWithError("No Records Found");
-    }
-    
+    if( $row = $result->fetch_assoc())
+        returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+    else
+        returnWithError("No Records Found");
+
     $stmt->close();
     $conn->close();
 }
