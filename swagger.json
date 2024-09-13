@@ -1,0 +1,36 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Simple API",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/hello" : {
+      "get" : {
+        "summary" : "Returns a greeting message",
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "string",
+                      "example" : "Hello, World!"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/NATHAN_34/SPT8/1.0.0"
+  } ]
+}
