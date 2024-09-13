@@ -2,7 +2,7 @@
 
 	$inData = getRequestInfo();
     
-	$searchName = "%" . $inData["search"] . "%";
+	$searchName = "%" . $inData["searchName"] . "%";
     $userId = $inData["userId"];
 
 	$searchResults = "";
