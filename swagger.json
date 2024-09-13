@@ -32,5 +32,8 @@
   "servers" : [ {
     "description" : "SwaggerHub API Auto Mocking",
     "url" : "https://virtserver.swaggerhub.com/NATHAN_34/SPT8/1.0.0"
+  }, {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "http://54.166.169.198/hello"
   } ]
 }
