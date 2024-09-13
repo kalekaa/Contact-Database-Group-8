@@ -19,7 +19,7 @@
         $stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?)");
         
         // bind to the table Users () id firstName lastName login password
-        // "ssss" is 4 string types and 1 int 
+        // "ssss" is 4 string types 
         $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
         $stmt->execute();
 	$stmt->close();
