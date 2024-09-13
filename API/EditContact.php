@@ -2,8 +2,7 @@
 
 	$inData = getRequestInfo();
 
-	$newFirst = $inData["newFirst"];
-	$newLast = $inData["newLast"];
+	$newName = $inData["newName"];
 	$newPhone = $inData["newPhone"];
 	$newEmail = $inData["newEmail"];  //don't have to change all, can just change one 
 	$userId = $inData["userId"];
@@ -16,8 +15,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("UPDATE Contacts SET FirstName=?, LastName=?, Phone=?, Email=? WHERE UserID=?");
-        $stmt->bind_param("ssssi", $newFirst, $newLast, $newEmail, $newPhone, $userId);
+        $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE UserID=?");
+        $stmt->bind_param("sssi", $newName, $newPhone, $newEmail, $userId);
 
         if ($stmt->execute())
         {
