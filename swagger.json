@@ -1,15 +1,312 @@
 {
   "openapi" : "3.0.0",
   "info" : {
+    "description" : "This is the API documentation for the COP 4331 Small Project - Contact Manager",
     "version" : "1.0.0",
     "title" : "Contact Manager",
-    "description" : "SPT8 Contact Manager API"
+    "contact" : {
+      "email" : "ja346874@ucf.edu"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
   },
+  "paths" : {
+    "/Login.php" : {
+      "post" : {
+        "tags" : [ "Login UI" ],
+        "summary" : "Logs in",
+        "operationId" : "Login",
+        "description" : "Logs in to the Contact Manager app",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "LoginItem",
+          "description" : "Login",
+          "schema" : {
+            "$ref" : "#/definitions/Login"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    },
+    "/AddUser.php" : {
+      "post" : {
+        "tags" : [ "Login UI" ],
+        "summary" : "Adds a user",
+        "operationId" : "AddUser",
+        "description" : "Adds a user to the Users database",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "AddUserItem",
+          "description" : "User to add",
+          "schema" : {
+            "$ref" : "#/definitions/AddUser"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    },
+    "/AddContact.php" : {
+      "post" : {
+        "tags" : [ "Contact Manager" ],
+        "summary" : "Adds a contact",
+        "operationId" : "AddContact",
+        "description" : "Adds a contact to the Contacts database",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "AddContactItem",
+          "description" : "Contact to add",
+          "schema" : {
+            "$ref" : "#/definitions/AddContact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    },
+    "/SearchContact.php" : {
+      "post" : {
+        "tags" : [ "Contact Manager" ],
+        "summary" : "Searches for contact",
+        "operationId" : "SearchContact",
+        "description" : "Searches for a contact in the Contacts database",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "SearchContactItem",
+          "description" : "Contact to search",
+          "schema" : {
+            "$ref" : "#/definitions/SearchContact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    },
+    "/EditContact.php" : {
+      "post" : {
+        "tags" : [ "Contact Manager" ],
+        "summary" : "Edits a contact",
+        "operationId" : "EditContact",
+        "description" : "Edits a contact in the Contacts database",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "EditContactItem",
+          "description" : "Contact to edit",
+          "schema" : {
+            "$ref" : "#/definitions/EditContact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    },
+    "/DeleteContact.php" : {
+      "post" : {
+        "tags" : [ "Contact Manager" ],
+        "summary" : "Deletes a contact",
+        "operationId" : "DeleteContact",
+        "description" : "Deletes a contact from the Contacts database",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "DeleteContactItem",
+          "description" : "Contact to delete",
+          "schema" : {
+            "$ref" : "#/definitions/DeleteContact"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "404" : {
+            "description" : "URL Not Found"
+          },
+          "500" : {
+            "description" : "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Login" : {
+      "type" : "object",
+      "required" : [ "login", "password" ],
+      "properties" : {
+        "login" : {
+          "type" : "string",
+          "example" : "ja346874"
+        },
+        "password" : {
+          "type" : "string",
+          "example" : "COP4331"
+        }
+      }
+    },
+    "AddUser" : {
+      "type" : "object",
+      "required" : [ "firstName", "lastName", "login", "password" ],
+      "properties" : {
+        "firstName" : {
+          "type" : "string",
+          "example" : "James"
+        },
+        "lastName" : {
+          "type" : "string",
+          "example" : "Coffey"
+        },
+        "login" : {
+          "type" : "string",
+          "example" : "ja346874"
+        },
+        "password" : {
+          "type" : "string",
+          "example" : "COP4331"
+        }
+      }
+    },
+    "AddContact" : {
+      "type" : "object",
+      "required" : [ "id", "name", "phone", "email", "userId" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "example" : 12
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "James Coffey"
+        },
+        "phone" : {
+          "type" : "string",
+          "example" : "3213173483"
+        },
+        "email" : {
+          "type" : "string",
+          "example" : "ja346874@ucf.edu"
+        },
+        "userId" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "SearchContact" : {
+      "type" : "object",
+      "required" : [ "searchName", "userId" ],
+      "properties" : {
+        "searchName" : {
+          "type" : "string",
+          "example" : "Ja"
+        },
+        "userId" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "EditContact" : {
+      "type" : "object",
+      "required" : [ "newName", "newPhone", "newEmail", "userId" ],
+      "properties" : {
+        "newName" : {
+          "type" : "string",
+          "example" : "Jim Coffey"
+        },
+        "newPhone" : {
+          "type" : "string",
+          "example" : "1118675309"
+        },
+        "newEmail" : {
+          "type" : "string",
+          "example" : "jrcoffey2004@gmail.com"
+        },
+        "userId" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "DeleteContact" : {
+      "type" : "object",
+      "required" : [ "id", "userId" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "example" : 12
+        },
+        "userId" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    }
+  },
+  "host" : "n8banks.xyz",
+  "basePath" : "/API/",
+  "schemes" : [ "http" ],
   "servers" : [ {
     "description" : "SwaggerHub API Auto Mocking",
     "url" : "https://virtserver.swaggerhub.com/NATHAN_34/SPT8/1.0.0"
-  }, {
-    "url" : "http://n8banks.xyz"
-  } ],
-  "paths" : "/"
+  } ]
 }
