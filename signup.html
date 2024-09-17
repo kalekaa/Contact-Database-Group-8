@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <!-- Sign Up Page -->
+    <div class="login-container">
+        <h1>Create Account</h1>
+        <form action="/signup" method="post">
+            <div class="form-group">
+                <span class="usericon"><i class="fa-regular fa-user"></i></span>            
+                <input type="text" name="username" placeholder="Username" required />
+            </div>
+            <div class="form-group">
+                <span class="envelopeicon"><i class="fa-regular fa-envelope"></i></span>            
+                <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <span class="keyicon"><i class="fa-solid fa-key"></i></span>            
+                <input type="password" name="password" placeholder="Password" />
+            </div>
+            <button type="submit" class="btn" onclick="addUser()">Sign Up</button>
+            <p><a href="login.html">Back to login</a></p>
+        </form>
+    </div>
+    <!-- JavaScript -->
+    <script src="code.js"></script>
+</body>
+</html>
