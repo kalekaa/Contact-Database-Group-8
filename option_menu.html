@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Options Menu</title>
         <link rel="stylesheet" href="style.css">
         
@@ -10,47 +10,14 @@
     <body>
         <h1 id = "title">Contact Manager</h1>
         <div class = "container" >
-            <div id = "loginDiv">
-                <h1 id = "smallerTitle">Pick a menu option below:</h1>
-                <div id = "loginDiv" class = button-container>
-                    <a id="menuOptions" class="menuButtons search" onclick="hideShow('searchPopUp')">Search</a>
-                    <a id="menuOptions" class="menuButtons edit" onclick="hideShow('editPopUp')">Edit</a>
-                    <a id="menuOptions" class="menuButtons delete" onclick="hideShow('deletePopUp')">Delete</a>
-                    <a id="menuOptions" class="menuButtons add" onclick="hideShow('addPopUp')">Add</a>
-                
-                    <a href="front_page.html" id="menuOptions" class="logoutButton logout" onclick="doLogin()">Log Out</a>
-                </div>
-            </div>
-        </div>
-    
-        <!-- search pop-up -->
-        <div id = "searchPopUp" class = "popUp">
-            <h1 id = "smallerTitle">Search for desired contact:</h1>
-            <a class="buttons search" onclick="hideShow('searchPopUp')">Back to Menu</a>
-            <a href="front_page.html" class="buttons logout">Log Out</a>
+                <h2>Search/Add</h2>
+                <input type="search" placeholder="Search contact name">
+                <button type="submit" class="buttons" onclick="searchContact()">Search</button>
+                <a href="add_contact.html" class="buttons">Add Contact</a>
         </div>
 
-        <!-- edit pop-up -->
-        <div id = "editPopUp" class = "popUp">
-            <h1 id = "smallerTitle">Search for desired contact to edit:</h1>
-            <a class="buttons edit" onclick="hideShow('editPopUp')">Back to Menu</a>
-            <a href="front_page.html" class="buttons logout">Log Out</a>
-        </div>
-
-        <!-- delete pop-up -->
-        <div id = "deletePopUp" class = "popUp">
-            <h1 id = "smallerTitle">Search for desired contact to delete:</h1>
-            <a class="buttons delete" onclick="hideShow('deletePopUp')">Back to Menu</a>
-            <a href="front_page.html" class="buttons logout">Log Out</a>
-        </div>
-
-        <!-- add pop-up -->
-        <div id = "addPopUp" class = "popUp">
-            <h1 id = "smallerTitle">Add your desired contact:</h1>
-            <a class="buttons add" onclick="hideShow('addPopUp')">Back to Menu</a>
-            <a href="front_page.html" class="buttons logout">Log Out</a>
-        </div>
-
+        <a href="front_page.html" class="buttons logout">Log Out</a>
         <script src = "code.js"></script>
     </body>
+    <script src = "code.js"></script>
 </html>
