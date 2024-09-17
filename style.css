@@ -1,225 +1,282 @@
-body 
-{
-    background-color: #6E8EB1;
-}
-/******** section for login page ********/
-#title 
-{
-    font-size: 65px;
-    width: 90%;
-    margin: 0 auto 2%; /* Center horizontally, no vertical margins */
-    display: block;
-    padding-top: 40px; /* Adjust as needed to move the title down */
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    color: #FFFFFF;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#smallerTitle 
-{
-    display: inline-block;
-    width: 90%;
-    text-align: center;
-    margin: 20px auto 5%;
-    display: block;
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(cyan, rgb(180, 221, 180));
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container, .signup-container, .add-contact-container {
+    position: absolute;
+    bottom: 130px;
     
-    font-size: 45px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: normal;
-    color: black;
-}
+    background: white;
+    padding: 50px;
 
-#loginDiv
-{
-    border-radius: 15px;
-    width: 70%;
-    padding: 30px;
-    background-color: #DEEDFF;
-}
-/* centers box surrounding login section */
-.container 
-{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
     display: flex;
-    align-items: flex-start; /* Vertically center the child */
-    justify-content: center; /* Horizontally center the child */
-    height: 100vh; /* Full viewport height */
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+    width: 50vh;
 }
 
-.container a
-{
+.dashboard-container {
+    background: white;
+    padding: 20px;
+    border-radius: 0 15px 0 15px;
+
     display: flex;
-    align-items: center; /* Vertically center the child */
-    justify-content: center; /* Horizontally center the child */
-    border: 2px solid black;
+    flex-direction: column;
+    justify-content: center;
 
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    /* Dimensions */
+    width: 60vh;
+    height: 40vh;
 }
 
-input[type="text"],input[type="password"]
-{
+.search-container {
+    background: white;
+    padding: 20px;
     border-radius: 15px;
-    text-align: center;
-    width: 40%;
-    height: 6%;
-    margin: 0 auto 1%;
-    display: block;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
-    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-/* not being usedd yet*/
-#loginResult
-{
-    font-size: 0.8em;
-    width: 90%;
+h1 {
     text-align: center;
-    margin: 0 auto 2%;
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
-    color: #95060a;
+    margin-bottom: 20px;
 }
 
-#buttonStyle
-{
-    text-align: center;
+.icon {
+    position: absolute;
+    right: -13px;
+    top: -15px;
     font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.buttons
-{ 
-    width: 20%;
-    height: 4%;
-    margin: 0 auto 2%;
-    display: block;
-    border-radius: 15px;
-    border: 2px solid black;
-
-    text-align: center;
-   
-    font-size: 15px;
-    font-family: 'Courier New', Courier, monospace;
-
-    text-decoration: none; /* Remove underline */
-    background-color: white;
-    color: black;
-
-}
-
-.login:hover
-{
-    background-color: #CAE7B9;
-}
-
-.createAccount:hover
-{
-    background-color: #F8EAAF;
-
-}
-/******** end of login page ********/
-
-/******** creating account ********/
-#directions 
-{
-    display: inline-block;
-    font-size: 30px;
-    width: 90%;
-    text-align: center;
-    margin: 20px auto 5%;
-    display: block;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: normal;
-    color: black;
-}
-
-/******** options menu ********/
-
-.button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
-    gap: 50px; /* Spacing between buttons */
-    width: 300px; /* Adjust width as needed */
-    margin: 0 auto;
-}
-
-#menuOptions
-{
-    text-align: center;
-    font-size: 35px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.menuButtons
-{ 
-    width: 80%;
-    height: 100%;
-    margin: 0 auto 2%;
-    display: block;
-    border-radius: 15px;
-    border: 2px solid black;
-
-    text-decoration: none; /* Remove underline */
-    background-color: white;
-    color: black;
-}
-
-.logoutButton {
-    width: 50%;
-    height: 80%;
-    margin: 0 auto 2%;
-    display: block;
-    border-radius: 15px;
-
-    grid-column: 1 / span 2; /* Span both columns */
-    padding: 10px 20px;
-   
-    text-decoration: none; /* Remove underline */
-    background-color: white;
-    color: black;
-}
-
-.search:hover
-{
-    background-color: #EB9486;
-}
-
-.edit:hover
-{
-    background-color: #F8EAAF;
-}
-
-.delete:hover
-{
-    background-color: #CAE7B9;
-}
-
-.add:hover
-{
-    background-color: #FFAF81;
-}
-
-.logout:hover
-{
-    background-color: #6E8EB1;
-}
-
-.popUp {
-    display: none;
-    align-items: flex-start; /* Vertically center the child */
-    justify-content: center; /* Horizontally center the child */
-    height: 85vh; /* Full viewport height */
-    background-color: #DEEDFF;
-
-    border-radius: 15px;
-    width: 70%;
-    padding: 30px;
-    margin: 0 auto; 
-}
-
-.popUp a{
+    color: gray;
+    height: 30%;
     display: flex;
-    align-items: center; /* Vertically center the child */
-    justify-content: center; /* Horizontally center the child */
-    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
 }
+
+.usericon {
+    position: absolute;
+    right: -11px;
+    top: -4px;
+    font-size: 15px;
+    color: gray;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.keyicon {
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    font-size: 15px;
+    color: gray;
+    height: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelopeicon {
+    position: absolute;
+    right: -13px;
+    top: -4px;
+    font-size: 15px;
+    color: gray;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 17px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-bottom: 2px solid #ff6347;
+}
+
+.form-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #d9d9d9;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -20px;
+    left: 0;
+    color: #ff6347;
+    font-size: 12px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff3d00;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.search-bar {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+}
+
+.search-btn {
+    width: 25%;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-contact-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-contact-btn:hover {
+    background-color: #45a049;
+}
+
+.contact-results {
+    margin-top: 20px;
+    /* Placeholder for where search results go */
+}
+
+/* Styles for Add Contact Page */
+
+
+.add-contact-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-contact-form .form-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-contact-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #d9d9d9;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.add-contact-form .form-group input:focus {
+    border-bottom: 2px solid #ff6347;
+}
+
+.add-contact-form .form-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #d9d9d9;
+    transition: all 0.2s ease;
+}
+
+.add-contact-form .form-group input:focus + label,
+.add-contact-form .form-group input:valid + label {
+    top: -20px;
+    left: 0;
+    color: #ff6347;
+    font-size: 12px;
+}
+
+.add-contact-form .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-contact-form .btn:hover {
+    background-color: #45a049;
+}
+
