@@ -41,8 +41,8 @@ function doLogin()
 //      var tmp = {login:login,password:hash};
 
         let jsonPayload = JSON.stringify( tmp );
-           let url = urlBase + '/Login.' + extension;
-console.log("doLogin still working"); // Check if function is being called
+        let url = urlBase + '/Login.' + extension;
+        console.log("doLogin still working"); // Check if function is being called
         let xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -164,7 +164,6 @@ function editContact(contactId) {
     let name = document.getElementById("editname").value;
     let email = document.getElementById("editEmail").value;
     let phone = document.getElementById("editphone").value;
-    let idNumber = document.getElementById("editIdNumber").value;
     
     // Clear any previous result messages
     document.getElementById("editResult").innerHTML = "";
@@ -174,8 +173,7 @@ function editContact(contactId) {
         id: contactId,           // Include the contact ID to identify which contact to update
         name: name,
         email: email,
-        phone: phone,
-        idNumber: idNumber
+        phone: phone
     };
     let jsonPayload = JSON.stringify(tmp);
     
