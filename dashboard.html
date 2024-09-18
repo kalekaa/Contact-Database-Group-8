@@ -19,9 +19,17 @@
             <a href="addcontact.html"><button class="add-contact-btn">Add Contact</button></a>
         </div>
         <div class="contact-results">
-            <!-- Results will appear here with edit/delete options -->
+            <ul id="contact-list"></ul>
         </div>
         <a href="login.html"><button class="logout-btn">Logout</button></a>
+    </div>
+    
+    <div id="search-popup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Contacts</h2>
+            <ul id="contact-list"></ul>
+        </div>
     </div>
     <!-- JavaScript -->
     <script src="code.js"></script>
