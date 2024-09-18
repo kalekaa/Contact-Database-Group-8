@@ -120,7 +120,6 @@ function addContact() {
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let phone = document.getElementById("phone").value;
-        let idNumber = document.getElementById("idNumber").value;
         
         // Clear any previous result messages
         document.getElementById("contactAddResult").innerHTML = "";
@@ -129,8 +128,7 @@ function addContact() {
         let tmp = {
                 name: name,
                 email: email,
-                phone: phone,
-                idNumber: idNumber
+                phone: phone
         };
 
         // Convert object to JSON
