@@ -101,7 +101,6 @@ function addContact() {
     // Get contact details from input fields
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
     
     // Clear any previous result messages
     document.getElementById("contactAddResult").innerHTML = "";
@@ -110,7 +109,7 @@ function addContact() {
     let tmp = {
         name: name,
         email: email,
-        phone: phone
+        userId: userId
     };
 
     // Convert object to JSON
@@ -144,7 +143,6 @@ function addContact() {
 function editContact(contactId) {
     // Get updated contact details from input fields
     let name = document.getElementById("editname").value;
-    let phone = document.getElementById("editphone").value;
     let email = document.getElementById("editEmail").value;
     let userId = document.getElementById("editIdNumber").value;
     
@@ -155,7 +153,6 @@ function editContact(contactId) {
     let tmp = {
         id: contactId,           // Include the contact ID to identify which contact to update
         name: name,
-        phone: phone,
         email: email,
         userId: userId
     };
