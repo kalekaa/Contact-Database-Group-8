@@ -22,7 +22,14 @@
         // "sssi" is 3 string types and 1 ints
         $stmt->bind_param("sssi", $name, $phone, $email, $userId);
 
-        $stmt->execute();
+        if ($stmt->execute())
+        {
+            if ($stmt->affected_rows > 0)
+                returnWithInfo($name, $phone, $email);
+            else
+                returnWithError("Could not add contact");
+        }
+        
         $stmt->close();
         $conn->close();
         returnWithError("");

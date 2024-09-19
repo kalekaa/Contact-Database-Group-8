@@ -33,7 +33,7 @@
 			$searchCount++;
 			$searchResults .= '"' . $row["Name"] . '"';
 			//"." means concatinate
-			//$searchResults .= '{"Name" : "' . $row["Name"].'", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '", "UserId" : "' . $row["UserId"].'"}';
+			$searchResults .= '{"ID" : "' . $row["ID"].'", "Name" : "' . $row["Name"].'", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '", "UserId" : "' . $row["UserId"].'"}';
 		}
 
 		if( $searchCount == 0 )
