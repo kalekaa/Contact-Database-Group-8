@@ -118,18 +118,12 @@ function addContact() {
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let phone = document.getElementById("phone").value;
-        let idNumber = document.getElementById("idNumber").value;
         
         // Clear any previous result messages
         document.getElementById("contactAddResult").innerHTML = "";
 
         // Create a temporary object with contact data
-        let tmp = {
-                name: name,
-                email: email,
-                phone: phone,
-                idNumber: idNumber
-        };
+        let tmp = {name:name, email:email, phone:phone};
 
         // Convert object to JSON
         let jsonPayload = JSON.stringify(tmp);
@@ -145,13 +139,13 @@ function addContact() {
         try {
                 xhr.onreadystatechange = function() {
                 // Check if the request was successful
-                if (this.readyState == 4 && this.status == 200) {
-                        console.log("Contact added successfully");
-                        document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-                        
-                        // Optionally, redirect to another page after adding the contact
-                        window.location.href = "contacts_page.html";
-                }
+                    if (this.readyState == 4 && this.status == 200) {
+                            console.log("Contact added successfully");
+                            document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+                            
+                            // Optionally, redirect to another page after adding the contact
+                            window.location.href = "option_menu.html";
+                    }
                 };
                 xhr.send(jsonPayload);  // Send the contact data
         } catch (err) {
