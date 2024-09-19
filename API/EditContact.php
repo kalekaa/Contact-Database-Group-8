@@ -2,6 +2,7 @@
 
 	$inData = getRequestInfo();
 
+	$id = $inData["id"]; // Must have to identify which contact to edit
 	$newName = $inData["newName"];
 	$newPhone = $inData["newPhone"];
 	$newEmail = $inData["newEmail"];  //don't have to change all, can just change one 
@@ -15,8 +16,8 @@
     }
     else
     {
-        $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE UserID=?");
-        $stmt->bind_param("sssi", $newName, $newPhone, $newEmail, $userId);
+        $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE UserID=? AND ID=?");
+        $stmt->bind_param("sssi", $newName, $newPhone, $newEmail, $userId, $id);
 
         if ($stmt->execute())
         {
