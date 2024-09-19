@@ -77,7 +77,6 @@ function doLogin()
 
 function addUser()
 {
-    
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
     let login = document.getElementById("login").value;
@@ -111,5 +110,5 @@ function addUser()
     {
         document.getElementById("userAddResult").innerHTML = err.message;
     }
-        
+
 }

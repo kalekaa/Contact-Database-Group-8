@@ -21,7 +21,15 @@
         // bind to the table Users () id firstName lastName login password
         // "ssss" is 4 string types 
         $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
-        $stmt->execute();
+        
+        if ($stmt->execute())
+        {
+            if ($stmt->affected_rows > 0)
+                returnWithInfo($firstName, $lastName, $login);
+            else
+                returnWithError("Could not add user");
+        }
+
         $stmt->close();
         $conn->close();
         returnWithError("");
