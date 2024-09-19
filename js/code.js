@@ -21,6 +21,7 @@ function hideShow(popUpID)
 let userId = 0;
 let firstName = "";
 let lastName = "";
+
 function doLogin()
 {
     userId = 0;
@@ -114,49 +115,47 @@ function addUser()
 }
 
 function addContact() {
-        // Get contact details from input fields
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let idNumber = document.getElementById("idNumber").value;
-        
-        // Clear any previous result messages
-        document.getElementById("contactAddResult").innerHTML = "";
+    // Get contact details from input fields
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    
+    // Clear any previous result messages
+    document.getElementById("contactAddResult").innerHTML = "";
 
-        // Create a temporary object with contact data
-        let tmp = {
-                name: name,
-                email: email,
-                phone: phone,
-                idNumber: idNumber
+    // Create a temporary object with contact data
+    let tmp = {
+        name: name,
+        email: email,
+        phone: phone
+    };
+
+    // Convert object to JSON
+    let jsonPayload = JSON.stringify(tmp);
+
+    // Define the URL endpoint to add the contact
+    let url = urlBase + '/AddContact.' + extension;
+
+    // Create XMLHttpRequest for sending data
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function() {
+            // Check if the request was successful
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("Contact added successfully");
+                document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+                
+                // Optionally, redirect to another page after adding the contact
+                window.location.href = "contacts_page.html";
+            }
         };
-
-        // Convert object to JSON
-        let jsonPayload = JSON.stringify(tmp);
-
-        // Define the URL endpoint to add the contact
-        let url = urlBase + '/AddContact.' + extension;
-
-        // Create XMLHttpRequest for sending data
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-        try {
-                xhr.onreadystatechange = function() {
-                // Check if the request was successful
-                if (this.readyState == 4 && this.status == 200) {
-                        console.log("Contact added successfully");
-                        document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-                        
-                        // Optionally, redirect to another page after adding the contact
-                        window.location.href = "contacts_page.html";
-                }
-                };
-                xhr.send(jsonPayload);  // Send the contact data
-        } catch (err) {
-                document.getElementById("contactAddResult").innerHTML = err.message;
-        }
+        xhr.send(jsonPayload);  // Send the contact data
+    } catch (err) {
+        document.getElementById("contactAddResult").innerHTML = err.message;
+    }
 }
 
 function editContact(contactId) {
@@ -164,7 +163,6 @@ function editContact(contactId) {
     let name = document.getElementById("editname").value;
     let email = document.getElementById("editEmail").value;
     let phone = document.getElementById("editphone").value;
-    let idNumber = document.getElementById("editIdNumber").value;
     
     // Clear any previous result messages
     document.getElementById("editResult").innerHTML = "";
@@ -174,8 +172,7 @@ function editContact(contactId) {
         id: contactId,           // Include the contact ID to identify which contact to update
         name: name,
         email: email,
-        phone: phone,
-        idNumber: idNumber
+        phone: phone
     };
     let jsonPayload = JSON.stringify(tmp);
     
@@ -196,7 +193,7 @@ function editContact(contactId) {
                     document.getElementById("editResult").innerHTML = jsonObject.error;
                 } else {
                     document.getElementById("editResult").innerHTML = "Contact updated successfully.";
-                        // Optionally, redirect to another page or refresh the contact list
+                    // Optionally, redirect to another page or refresh the contact list
                 }
             }
         };
@@ -205,7 +202,7 @@ function editContact(contactId) {
         document.getElementById("editResult").innerHTML = err.message;
     }
 }
-    
+
 
 function searchContact() {
     // Get the search term from the input field

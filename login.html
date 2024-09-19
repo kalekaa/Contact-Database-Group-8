@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { 
+            background-image: url(gerber_edited.jpg);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Sign In Page -->
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <form action="/dashboard" method="post">
+            <div class="form-group">  
+                <span class="icon"><i class="fa-regular fa-user"></i></span>            
+                <input type="text" name="username" placeholder="Username" required />
+            <div class="form-group">
+                <span class="keyicon"><i class="fa-solid fa-key"></i></span>            
+                <input type="password" name="password" placeholder="Password" />
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+            <p><a href="signup.html">Create account</a></p>
+        </form>
+    </div>
+    <!-- JavaScript -->
+    <script src="code.js"></script>
+</body>
+</html>
