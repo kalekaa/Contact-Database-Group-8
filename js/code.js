@@ -1,23 +1,6 @@
 const urlBase = 'http://n8banks.xyz/API';
 const extension = 'php';
 
-var display = 1;
-
-function hideShow(popUpID) 
-{
-    var div = document.getElementById(popUpID);
-    if(display == 1) {
-        div.style.display = 'block';
-        display = 0;
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    } else {
-        
-        div.style.display = 'none';
-        display = 1;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-}
-
 let userId = 0;
 let firstName = "";
 let lastName = "";
@@ -158,7 +141,7 @@ function editContact(contactId) {
     let name = document.getElementById("editname").value;
     let email = document.getElementById("editEmail").value;
     let phone = document.getElementById("editphone").value;
-    let idNumber = document.getElementById("editIdNumber").value;
+    let userId = document.getElementById("editIdNumber").value;
     
     // Clear any previous result messages
     document.getElementById("editResult").innerHTML = "";
@@ -169,12 +152,12 @@ function editContact(contactId) {
         name: name,
         email: email,
         phone: phone,
-        idNumber: idNumber
+        userId: userId
     };
     let jsonPayload = JSON.stringify(tmp);
     
     // Define the URL for the update API
-    let url = urlBase + '/UpdateContact.' + extension;
+    let url = urlBase + '/EditContact.' + extension;
     
     // Create XMLHttpRequest for sending the update request
     let xhr = new XMLHttpRequest();
