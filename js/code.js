@@ -98,7 +98,6 @@ function addUser()
 }
 
 function addContact() {
-<<<<<<< HEAD
     // Get contact details from input fields
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
@@ -133,63 +132,21 @@ function addContact() {
                 document.getElementById("contactAddResult").innerHTML = "Contact has been added";
                 
                 // Optionally, redirect to another page after adding the contact
-                window.location.href = "contacts_page.html";
+                window.location.href = "option_menu.html";
             }
         };
         xhr.send(jsonPayload);  // Send the contact data
     } catch (err) {
         document.getElementById("contactAddResult").innerHTML = err.message;
     }
-=======
-        // Get contact details from input fields
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        
-        // Clear any previous result messages
-        document.getElementById("contactAddResult").innerHTML = "";
-
-        // Create a temporary object with contact data
-        let tmp = {name:name, email:email, phone:phone};
-
-        // Convert object to JSON
-        let jsonPayload = JSON.stringify(tmp);
-
-        // Define the URL endpoint to add the contact
-        let url = urlBase + '/AddContact.' + extension;
-
-        // Create XMLHttpRequest for sending data
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-        try {
-                xhr.onreadystatechange = function() {
-                // Check if the request was successful
-                    if (this.readyState == 4 && this.status == 200) {
-                            console.log("Contact added successfully");
-                            document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-                            
-                            // Optionally, redirect to another page after adding the contact
-                            window.location.href = "option_menu.html";
-                    }
-                };
-                xhr.send(jsonPayload);  // Send the contact data
-        } catch (err) {
-                document.getElementById("contactAddResult").innerHTML = err.message;
-        }
->>>>>>> 7ec7dac89818aa9b5e77527dd56958392e6a9ec5
 }
 
 function editContact(contactId) {
     // Get updated contact details from input fields
     let name = document.getElementById("editname").value;
-    let email = document.getElementById("editEmail").value;
     let phone = document.getElementById("editphone").value;
-<<<<<<< HEAD
-=======
+    let email = document.getElementById("editEmail").value;
     let userId = document.getElementById("editIdNumber").value;
->>>>>>> 7ec7dac89818aa9b5e77527dd56958392e6a9ec5
     
     // Clear any previous result messages
     document.getElementById("editResult").innerHTML = "";
@@ -198,13 +155,9 @@ function editContact(contactId) {
     let tmp = {
         id: contactId,           // Include the contact ID to identify which contact to update
         name: name,
-        email: email,
-<<<<<<< HEAD
-        phone: phone
-=======
         phone: phone,
+        email: email,
         userId: userId
->>>>>>> 7ec7dac89818aa9b5e77527dd56958392e6a9ec5
     };
     let jsonPayload = JSON.stringify(tmp);
     
