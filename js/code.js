@@ -100,6 +100,7 @@ function addUser()
 function addContact() {
     // Get contact details from input fields
     let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
     let email = document.getElementById("email").value;
     
     // Clear any previous result messages
@@ -108,6 +109,7 @@ function addContact() {
     // Create a temporary object with contact data
     let tmp = {
         name: name,
+        phone: phone,
         email: email,
         userId: userId
     };
@@ -142,7 +144,8 @@ function addContact() {
 
 function editContact(contactId) {
     // Get updated contact details from input fields
-    let name = document.getElementById("editname").value;
+    let name = document.getElementById("editName").value;
+    let phone = document.getElementById("editPhone").value;
     let email = document.getElementById("editEmail").value;
     let userId = document.getElementById("editIdNumber").value;
     
@@ -153,6 +156,7 @@ function editContact(contactId) {
     let tmp = {
         id: contactId,           // Include the contact ID to identify which contact to update
         name: name,
+        phone: phone,
         email: email,
         userId: userId
     };
