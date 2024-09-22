@@ -16,14 +16,13 @@
 	}
 	else
     {
-        $query = "%" . $name . "%";
-        // prepare the query 
+        
         $stmt = $conn->prepare('SELECT Name, Phone, Email FROM Contacts 
                                 WHERE LOWER(Name) LIKE ? 
                                 AND User_ID = ?');
 
         // searching by name to the matching userID 
-        $stmt->bind_param('si', $query, $userId);
+        $stmt->bind_param('si', $searchName, $userId);
         $stmt->execute();
 
         $result = $stmt->get_result();
