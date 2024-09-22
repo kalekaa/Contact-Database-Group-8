@@ -15,39 +15,34 @@
 		returnWithError( $conn->connect_error );
 	}
 	else
-	{
-		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE (Name like ? OR Phone like ? OR Email like ?) AND UserId=?");
-		$stmt->bind_param("si", $searchName, $userId);
-		$stmt->execute();
+    {
+        $query = "%" . $name . "%";
+        // prepare the query 
+        $stmt = $conn->prepare('SELECT * FROM Contacts WHERE LOWER(Name) LIKE ? AND User_ID = ?');
 
-        // if statement ?
+        // searching by name to the matching userID 
+        $stmt->bind_param('si', $query, $userId);
+        $stmt->execute();
 
-		$result = $stmt->get_result();
+        $result = $stmt->get_result();
+        $contacts = array(); 
 
-		while($row = $result->fetch_assoc())
-		{
-			if( $searchCount > 0 )
-			{
-				$searchResults .= ",";
-			}
-			$searchCount++;
-			$searchResults .= '"' . $row["Name"] . '"';
-			//"." means concatinate
-			$searchResults .= '{"ID" : "' . $row["ID"].'", "Name" : "' . $row["Name"].'", "Phone" : "' . $row["Phone"]. '", "Email" : "' . $row["Email"]. '", "UserId" : "' . $row["UserId"].'"}';
-		}
+        while ($row = $result->fetch_assoc()) {
+            $contacts[] = $row;
+        }
+    
+        if (empty($contacts)) 
+        {
+            returnWithError("No Records Found");
+        }
+        else 
+        {
+            returnWithInfo($contacts);
+        }
 
-		if( $searchCount == 0 )
-		{
-			returnWithError( "No Records Found" );
-		}
-		else
-		{
-			returnWithInfo( $searchResults );
-		}
-
-		$stmt->close();
-		$conn->close();
-	}
+        $stmt->close();
+        $conn->close();
+    }
 
 	function getRequestInfo()
 	{
@@ -66,10 +61,11 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnWithInfo( $searchResults )
+	function returnWithInfo( $contacts )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
-		sendResultInfoAsJson( $retValue );
+        $retValue = json_encode($contacts);
+        sendResultInfoAsJson($retValue);
+
 	}
 
 ?>
