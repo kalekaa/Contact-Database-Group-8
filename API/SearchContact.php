@@ -19,7 +19,7 @@
         
         $stmt = $conn->prepare('SELECT ID, Name, Phone, Email FROM Contacts 
                                 WHERE LOWER(Name) LIKE ? 
-                                AND User_ID = ?');
+                                AND UserID = ?');
 
         // searching by name to the matching userID 
         $stmt->bind_param('si', $searchName, $userId);
