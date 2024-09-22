@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
-
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- JavaScript -->
+    <script src = "js/code.js"></script>
 </head>
 <body>
     <!-- Dashboard Page -->
@@ -16,12 +17,12 @@
             <button class="search-btn" onclick="searchContact()">Search</button>
         </div>
         <div>
-            <a href="addcontact.html"><button class="add-contact-btn">Add Contact</button></a>
+            <a href="add_contact.html"><button class="add-contact-btn">Add Contact</button></a>
         </div>
         <div class="contact-results">
             <ul id="contact-list"></ul>
         </div>
-        <a href="login.html"><button class="logout-btn">Logout</button></a>
+        <a href="main_page.html"><button class="logout-btn">Logout</button></a>
     </div>
     
     <div id="search-popup" class="modal">
@@ -31,7 +32,5 @@
             <ul id="contact-list"></ul>
         </div>
     </div>
-    <!-- JavaScript -->
-    <script src="code.js"></script>
 </body>
 </html>
