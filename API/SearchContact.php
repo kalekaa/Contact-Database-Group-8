@@ -17,7 +17,7 @@
 	else
     {
         
-        $stmt = $conn->prepare('SELECT Name, Phone, Email FROM Contacts 
+        $stmt = $conn->prepare('SELECT ID, Name, Phone, Email FROM Contacts 
                                 WHERE LOWER(Name) LIKE ? 
                                 AND User_ID = ?');
 
