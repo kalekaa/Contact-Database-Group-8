@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Options Menu</title>
+        <link rel="stylesheet" href="css/dashboard.css">
+
+    </head>
+    <body>
+
+        <div class = "dashboard-container" >
+                <h2>Search</h2>
+                <input class="search-bar" id="searchInput" type="search" placeholder="Search contact name...">
+                <button type="submit" class="search-btn" onclick="searchContact();">Search</button>
+                <span id="searchResult"></span>
+                <p id="nameList">
+                </p><br /><br />
+
+                <footer><a href="main_page.html">Logout</a></footer>
+        </div>
+
+        <div id="search-popup" class="modal">
+                <div class="modal-content">
+                        <h2>Contacts</h2>
+                        <ul id="nameList">
+                </div>
+        </div>
+
+        <script src = "js/code.js"></script>
+    </body>
+</html>
