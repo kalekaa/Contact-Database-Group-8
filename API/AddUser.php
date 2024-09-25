@@ -2,8 +2,8 @@
 
     $inData = getRequestInfo();
 
-    $firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
+    $firstName = $inData["firstname"];
+    $lastName = $inData["lastname"];
     $login = $inData["login"];
     $password = $inData["password"];
 
@@ -15,21 +15,13 @@
     }
     else
     {
-        // prepare for all the columns that u will insert into 
+        // prepare for all the columns that u will insert into
         $stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES (?, ?, ?, ?)");
-        
-        // bind to the table Users () id firstName lastName login password
-        // "ssss" is 4 string types 
-        $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
-        
-        if ($stmt->execute())
-        {
-            if ($stmt->affected_rows > 0)
-                returnWithInfo($firstName, $lastName, $login);
-            else
-                returnWithError("Could not add user");
-        }
 
+        // bind to the table Users () id firstName lastName login password
+        // "ssss" is 4 string types
+        $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
+        $stmt->execute();
         $stmt->close();
         $conn->close();
         returnWithError("");
@@ -45,7 +37,7 @@
         header('Content-type: application/json');
         echo $obj;
     }
-        
+
     function returnWithError( $err )
     {
         $retValue = '{"error":"' . $err . '"}';

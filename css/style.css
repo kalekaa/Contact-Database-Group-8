@@ -17,7 +17,7 @@ body {
 .login-container, .signup-container, .add-contact-container {
     position: absolute;
     bottom: 130px;
-    
+
     background: white;
     padding: 50px;
 
@@ -278,4 +278,83 @@ a {
 
 .add-contact-form .btn:hover {
     background-color: #45a049;
+}
+/******** section for login page ********/
+
+#loginName
+{
+        font-size: 30px;
+}
+#loginPassword
+{
+        font-size: 30px;
+}
+#loginResult
+{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+
+/******** creating account ********/
+
+#firstName {
+    font-size: 30px;
+}
+
+#lastName {
+    font-size: 30px;
+}
+
+#login {
+    font-size: 30px;
+}
+#password {
+    font-size: 30px;
+}
+
+#userAddResult {
+
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+
+}
+/******** options menu ********/
+#contactAddResult {
+
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+
+}
+#searchResult {
+
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
 }

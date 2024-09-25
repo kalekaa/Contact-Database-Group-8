@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Account</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/code.js"></script>
+    </head>
+    <body>
+        <h1 id = "title">Add Contact</h1>
+        <div class = "container">
+            <div id = "loginDiv">
+
+                <h1 id = "smallerTitle">Add your desired contact:</h1>
+                <h4 id = "directions">Please fill out the following:</h4>
+                <input type= "text" id = "name" placeholder="name"/><br/>
+                <input type= "text" id = "phone" placeholder="phone"/><br/>
+                <input type= "text" id = "email" placeholder="email"/><br/>
+
+
+                <a class="buttons createAccount" onclick="addContact();">Add Contact</a>
+                <span id="contactAddResult"></span>
+
+            </div>
+        </div>
+    </body>
+</html>
