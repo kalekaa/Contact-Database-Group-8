@@ -9,27 +9,21 @@
     <script src = "js/code.js"></script>
 </head>
 <body>
+
     <!-- Dashboard Page -->
     <div class="dashboard-container">
         <h1>Search Contact</h1>
         <div class="search-container">
             <input type="text" id = "searchInput" placieholder="Search for contacts..." class="search-bar" />
         </div>
-
         <div><button id="add" class="search-btn" onclick="searchContact();">Search</button></div>
-
         <div><a href="add_contact.html"><button class="add-contact-btn">Add Contact</button></a></div>
-
-
         <div class="contact-results">
             <ul id="contact-list"></ul>
         </div>
-
         <a href="main_page.html"><button class="logout-btn">Logout</button></a>
     </div>
-
     <div id="popup" class="popup"></div>
-
     <div id="search-popup" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closePopup()">&times;</span>

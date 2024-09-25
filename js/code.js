@@ -198,10 +198,12 @@ function editContact(contactId, contactName, contactEmail, contactPhone) {
                 }
             };
             xhr.send(jsonPayload);
-        } catch (err) {
+        }
+        catch (err) {
             document.getElementById("searchResult").innerHTML = err.message;
         }
-    } else {
+    }
+    else {
         // Edit mode: Replace the table cells with input fields for editing
         row.innerHTML = `
             <td><input type="text" id="editName-${contactId}" value="${contactName}" /></td>
@@ -209,9 +211,7 @@ function editContact(contactId, contactName, contactEmail, contactPhone) {
             <td><input type="text" id="editPhone-${contactId}" value="${contactPhone}" /></td>
             <td>
                 <button onclick="editContact(${contactId}, '${contactName}', '${contactEmail}', '${contactPhone}');">Save</button>
-
-            </td>
-        `;
+            </td> `;
     }
 }
 
@@ -275,26 +275,27 @@ function searchContact() {
                         <tbody> `;
 
 
-                //     // Loop through results and display contact information
-                     contacts.forEach(function(contact){
+                    // Loop through results and display contact information
+                    contacts.forEach(function(contact) {
                         contactTable += `
-                           <tr id="contact-${contact.ID}">
-                              <td>${contact.Name}</td>
-                              <td>${contact.Email}</td>
-                              <td>${contact.Phone}</td>
-                              <td>
-                                <button onclick="deleteContact(${contact.ID});">Delete</button>
-                                <button onclick="editContact(${contact.ID}, '${contact.Name}', '${contact.Email}', '${contact.Phone}');">Edit</button>
-                              </td>
+                            <tr id="contact-${contact.ID}">
+                                <td>${contact.Name}</td>
+                                <td>${contact.Email}</td>
+                                <td>${contact.Phone}</td>
+                                <td>
+                                    <button onclick="deleteContact(${contact.ID});">Delete</button>
+                                    <button onclick="editContact(${contact.ID}, '${contact.Name}', '${contact.Email}', '${contact.Phone}');">Edit</button>
+                                </td>
                             </tr> `;
-                        });
-                      contactTable += `
-                         </tbody>
-                         </table>
-                        `;
-                        document.getElementById("searchResult").innerHTML = contactTable;
-                } else {
-                     document.getElementById("searchResult").innerHTML = "No contacts found with that name.";
+                    });
+                    contactTable += `
+                        </tbody>
+                        </table> `;
+                    document.getElementById("searchResult").innerHTML = contactTable;
+                }
+                else
+                {
+                    document.getElementById("searchResult").innerHTML = "No contacts found with that name.";
                 }
             }
         };
@@ -325,39 +326,34 @@ function deleteContact(contactId) {
 
     if (xhr.readyState == 4)
     {
-            if(xhr.status == 200)
+        if(xhr.status == 200)
+        {
+
+            if(jsonObject.success)
             {
-
-                if(jsonObject.success)
-                {
-                        console.log("contact deleted successfully");
-
-                        searchContact();
-
-                }
-                else
-                {
-                        console.error("Empty response from server.",jsonObject.error);
-                }
-           }
-           else
-           {
-                console.error("failed to delete contact:", this.statusText);
-           }
+                console.log("contact deleted successfully");
+                searchContact();
+            }
+            else
+            {
+                console.error("Empty response from server.",jsonObject.error);
+            }
         }
+        else
+        {
+            console.error("failed to delete contact:", this.statusText);
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', ()=> {
-        document.getElementById('add').addEventListener('click', openPopup);
-
+    document.getElementById('add').addEventListener('click', openPopup);
 });
 
 function openPopup() {
-        document.getElementById('search-popup').style.display='block';
-
+    document.getElementById('search-popup').style.display='block';
 }
 
 function closePopup() {
-        document.getElementById('search-popup').style.display = 'none';
-
+    document.getElementById('search-popup').style.display = 'none';
 }
