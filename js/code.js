@@ -11,11 +11,11 @@ function doLogin(event){
     userId = 0;
     firstName = "";
     lastName = "";
-
+    
     let login = document.getElementById("loginName").value;
     let password = document.getElementById("loginPassword").value;
     // var hash = md5( password );
-
+    
     document.getElementById("loginResult").innerHTML = "";
     if (login === "" || password === "") {
         document.getElementById("loginResult").innerHTML = "Please enter both login and password.";
@@ -163,9 +163,9 @@ function editContact(contactId, contactName, contactEmail, contactPhone) {
         // Create the payload to send to the server
         let tmp = {
             id: contactId,
-            name: updatedName,
-            email: updatedEmail,
-            phone: updatedPhone,
+            newName: updatedName,
+            newEmail: updatedEmail,
+            newPhone: updatedPhone,
             userId: userId
         };
 
@@ -198,12 +198,10 @@ function editContact(contactId, contactName, contactEmail, contactPhone) {
                 }
             };
             xhr.send(jsonPayload);
-        }
-        catch (err) {
+        } catch (err) {
             document.getElementById("searchResult").innerHTML = err.message;
         }
-    }
-    else {
+    } else {
         // Edit mode: Replace the table cells with input fields for editing
         row.innerHTML = `
             <td><input type="text" id="editName-${contactId}" value="${contactName}" /></td>
@@ -211,7 +209,8 @@ function editContact(contactId, contactName, contactEmail, contactPhone) {
             <td><input type="text" id="editPhone-${contactId}" value="${contactPhone}" /></td>
             <td>
                 <button onclick="editContact(${contactId}, '${contactName}', '${contactEmail}', '${contactPhone}');">Save</button>
-            </td> `;
+            </td>
+        `;
     }
 }
 
@@ -276,7 +275,7 @@ function searchContact() {
 
 
                     // Loop through results and display contact information
-                    contacts.forEach(function(contact) {
+                    contacts.forEach(function(contact){
                         contactTable += `
                             <tr id="contact-${contact.ID}">
                                 <td>${contact.Name}</td>
@@ -290,12 +289,10 @@ function searchContact() {
                     });
                     contactTable += `
                         </tbody>
-                        </table> `;
-                    document.getElementById("searchResult").innerHTML = contactTable;
-                }
-                else
-                {
-                    document.getElementById("searchResult").innerHTML = "No contacts found with that name.";
+                        </table>`;
+                        document.getElementById("searchResult").innerHTML = contactTable;
+                } else {
+                     document.getElementById("searchResult").innerHTML = "No contacts found with that name.";
                 }
             }
         };
@@ -306,14 +303,14 @@ function searchContact() {
     }
 }
 
-
 function deleteContact(contactId) {
     let userId = localStorage.getItem("userId");
+
     // Clear any previous result messages
     document.getElementById("deleteResult").innerHTML = "";
 
     // Create a JSON payload with the contact ID to be deleted
-    let tmp = { id: contactId, userId:userId };
+    let tmp = { id: contactId, userId: userId };
     let jsonPayload = JSON.stringify(tmp);
 
     // Define the URL for the delete API
@@ -324,28 +321,39 @@ function deleteContact(contactId) {
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-    if (xhr.readyState == 4)
-    {
-        if(xhr.status == 200)
-        {
+    // Set up the onreadystatechange event handler
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) { // Check if the request is complete
+            if (xhr.status == 200) { // Check if the response was successful
+                console.log('Delete response: ', xhr.responseText);
+                try {
+                    let jsonObject = JSON.parse(xhr.responseText);
 
-            if(jsonObject.success)
-            {
-                console.log("contact deleted successfully");
-                searchContact();
-            }
-            else
-            {
-                console.error("Empty response from server.",jsonObject.error);
+                    // Check for errors in the response
+                    if (jsonObject.Error && jsonObject.Error.length > 0) {
+                        document.getElementById("deleteResult").innerHTML = jsonObject.Error;
+                    } else {
+                        // Remove the deleted contact row from the DOM
+                        document.getElementById(`contact-${contactId}`).remove();
+                        document.getElementById("deleteResult").innerHTML = "Contact deleted successfully!";
+                    }
+                } catch (err) {
+                    console.error("Error parsing JSON:", err);
+                }
+            } else {
+                document.getElementById("deleteResult").innerHTML = "Failed to delete contact. Please try again.";
+                console.error("Error deleting contact:", xhr.status, xhr.statusText);
             }
         }
-        else
-        {
-            console.error("failed to delete contact:", this.statusText);
-        }
+    };
+
+    // Send the delete request
+    try {
+        xhr.send(jsonPayload);
+    } catch (err) {
+        document.getElementById("deleteResult").innerHTML = err.message;
     }
 }
-
 document.addEventListener('DOMContentLoaded', ()=> {
     document.getElementById('add').addEventListener('click', openPopup);
 });
