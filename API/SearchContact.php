@@ -26,7 +26,7 @@
         {
             if( $searchCount > 0 )
             {
-                    $searchResults .= ",";
+                $searchResults .= ",";
             }
             $searchCount++;
             //"." means concatinate

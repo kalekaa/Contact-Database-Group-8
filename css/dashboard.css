@@ -8,7 +8,7 @@ body {
 }
 
 a {
-        color: red;
+    color: red;
 }
 
 .search-container {
@@ -68,12 +68,12 @@ a {
 }
 
 .logout-btn {
-        background-color: red;
-        color: white;
-        border: none;
-        cursor: pointer;
-        margin: 10px;
-        height: 60%;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    height: 60%;
 }
 
 /* Modal styling */
@@ -94,10 +94,10 @@ a {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 90%;
+    width: 75vh;
     position: absolute;
-    left: 420px;
-    top: 200px;
+    left: 575px;
+    top: 210px;
 }
 
 .close {
@@ -134,39 +134,39 @@ a {
 }
 
 .popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .popup .submit-btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .popup .close-btn {
-        margin-top: 20px;
+    margin-top: 20px;
 }
 
 .popup {
-        display: none;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px solid #ccc;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
