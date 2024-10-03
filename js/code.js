@@ -7,7 +7,7 @@ let lastName = "";
 
 function doLogin(event){
     event.preventDefault();
-        //console.log("doLogin working"); // Check if function is being called
+    //console.log("doLogin working"); // Check if function is being called
     userId = 0;
     firstName = "";
     lastName = "";
