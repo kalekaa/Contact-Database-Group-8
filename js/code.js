@@ -220,6 +220,7 @@ function startsWith(string, prefix, n)
 }
 
 function searchContact() {
+    document.getElementById("deleteResult").innerHTML = "";
     // Get the search term from the input field
     let searchName = document.getElementById("searchInput").value;
     let userId = localStorage.getItem("userId");
