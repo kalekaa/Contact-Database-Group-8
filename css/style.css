@@ -16,7 +16,7 @@ body {
 
 .login-container, .signup-container, .add-contact-container {
     position: absolute;
-    bottom: 130px;
+    bottom: 70px;
 
     background: white;
     padding: 50px;

@@ -18,15 +18,11 @@ error_reporting(E_ALL);
     }
     else
     {
-    $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE ID = ? AND UserId = ?");
-    $stmt->bind_param("sssii", $newName, $newPhone, $newEmail, $ID, $userId);
+        $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE ID = ? AND UserId = ?");
+        $stmt->bind_param("sssii", $newName, $newPhone, $newEmail, $ID, $userId);
 
-        if ($stmt->execute())
-        {
-            if ($stmt->affected_rows == 0)
-                returnWithError("Could not edit contact");
-        }
-        
+        $stmt->execute()
+
         // close the prepared statement
         $stmt->close();
 
