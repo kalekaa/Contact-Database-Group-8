@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     $inData = getRequestInfo();
 
     $ID = $inData["id"]; // Must have to identify which contact to edit
@@ -21,7 +21,12 @@ error_reporting(E_ALL);
         $stmt = $conn->prepare("UPDATE Contacts SET Name=?, Phone=?, Email=? WHERE ID = ? AND UserId = ?");
         $stmt->bind_param("sssii", $newName, $newPhone, $newEmail, $ID, $userId);
 
-        $stmt->execute()
+        // Necessary for error checking
+        if ($stmt->execute())
+        {
+            if ($stmt->affected_rows == -1)
+                returnWithError("Could not edit contact");
+        }
 
         // close the prepared statement
         $stmt->close();
